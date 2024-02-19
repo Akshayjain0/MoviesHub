@@ -9,20 +9,25 @@ function App() {
 	const dispatch = useDispatch();
 	const [count, setCount] = useState(0);
 	useEffect(() => {
-		apiTesting();
+		fetchApiConfig();
 	}, []);
-	const apiTesting = () => {
-		fetchDataFromApi("/movie/popular").then((res) => {
-			dispatch(getApiConfiguration(res));
-			console.log(res);
+	const fetchApiConfig = () => {
+		fetchDataFromApi("/configuration").then((res) => {
+			const url = {
+				backdrop: res.images.secure_base_url + "original",
+				poster: res.images.secure_base_url + "original",
+				profile: res.images.secure_base_url + "original",
+			};
+			dispatch(getApiConfiguration(url));
+			// console.log(res);
 		});
 	};
-	const { url } = useSelector((state) => state.home);
+	// const { url } = useSelector((state) => state.home);
 	return (
 		<>
-			<Header />
-			<Outlet />
-			<Footer />
+			{/* <Header /> */}
+			<Outlet /> 
+			{/* <Footer /> */}
 		</>
 	);
 }
