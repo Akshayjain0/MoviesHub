@@ -1,9 +1,10 @@
-import React from 'react'
-import './style.scss'
+import React from "react";
+import "./style.scss";
+import { useParams } from "react-router-dom";
 const SearchResult = () => {
-  return (
-    <div>SearchResult</div>
-  )
-}
+	const param = useParams();
+	console.log(param);
+	return <div>SearchResult</div>;
+};
 
-export default SearchResult
+export default SearchResult;

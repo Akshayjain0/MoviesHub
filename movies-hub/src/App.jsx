@@ -25,7 +25,7 @@ function App() {
 	// const { url } = useSelector((state) => state.home);
 	return (
 		<>
-			{/* <Header /> */}
+			<Header />
 			<Outlet /> 
 			{/* <Footer /> */}
 		</>
