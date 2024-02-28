@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import Img from "../lazyLoadImage/img";
+import Img from "../lazyLoadImage/Img";
 import PosterFallback from "../../assets/no-poster.png";
 import "./style.scss";
 import CircleRating from "../circleRating/CircleRating";
@@ -77,7 +77,7 @@ const Carousel = ({ data, loading, endpoint }) => {
 											{item.title || item.name}
 										</span>
 										<span className='date'>
-											{dayjs(item.release_Date).format(
+											{dayjs(item.release_date).format(
 												"MMM D, YYYY"
 											)}
 										</span>

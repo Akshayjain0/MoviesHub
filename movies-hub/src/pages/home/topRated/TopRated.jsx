@@ -6,7 +6,7 @@ import Carousel from "../../../components/carousel/Carousel";
 const Popular = () => {
 	const [endpoint, setEndpoint] = useState("movie");
 	const { data, loading } = useFetch(`/${endpoint}/top_rated`);
-	console.log(data);
+	// console.log(data);
 	const onTabChange = (tab) => {
 		// console.log(tab)
 		setEndpoint(tab === "Movies" ? "movie" : "tv");
